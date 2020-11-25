@@ -5,6 +5,32 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
     </style>
 
+    <style name="TitleFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="PrimaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="SecondaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+    </style>
+<!--    <style name="SecondaryHeading" parent="TextAppearance.AppCompat">-->
+<!--        <item name="android:textSize">16sp</item>-->
+<!--        <item name="android:fontFamily">@font/poppins</item>-->
+<!--        <item name="android:textColor">@color/secondaryTextColor</item>-->
+<!--    </style>-->
 </resources>

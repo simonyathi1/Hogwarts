@@ -6,14 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/houses_list"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
+    <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
+        android:id="@+id/gryff"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/huff"
+        app:layout_constraintEnd_toStartOf="@id/sly"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
+        android:id="@+id/sly"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/rev"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toEndOf="@id/gryff"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
+        android:id="@+id/huff"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/sly"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/gryff" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
+        android:id="@+id/rev"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/huff"
+        app:layout_constraintTop_toBottomOf="@id/sly" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,14 @@
     <color name="colorPrimaryDark">#270101</color>
     <color name="colorAccent">#03DAC8</color>
 
-    <color name="colorSecondaryTextColor">#221313</color>
+    <color name="colorSecondaryTextColor">#322626</color>
     <color name="colorPrimaryTextColor">#130101</color>
-    <color name="colorLightText">#FFD8D8</color>
+    <color name="colorLight">#FFD8D8</color>
+
+    <color name="colorError">#730000</color>
+
+    <color name="colorGryffindor">#99D00000</color>
+    <color name="colorHufflePuff">#9AE4BB00</color>
+    <color name="colorSlytherin">#9A006B00</color>
+    <color name="colorRavenclaw">#9A008BB1</color>
 </resources>
