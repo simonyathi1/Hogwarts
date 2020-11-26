@@ -7,38 +7,48 @@
     tools:context=".MainActivity">
 
     <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
-        android:id="@+id/gryff"
+        android:id="@+id/gryffindor_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/huff"
-        app:layout_constraintEnd_toStartOf="@id/sly"
+        app:layout_constraintBottom_toTopOf="@id/hufflepuff_card"
+        app:layout_constraintEnd_toStartOf="@id/slytherin_card"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
-        android:id="@+id/sly"
+        android:id="@+id/slytherin_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@id/rev"
+        app:layout_constraintBottom_toTopOf="@id/ravenclaw_card"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/gryff"
+        app:layout_constraintStart_toEndOf="@id/gryffindor_card"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
-        android:id="@+id/huff"
+        android:id="@+id/hufflepuff_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/sly"
+        app:layout_constraintEnd_toStartOf="@id/slytherin_card"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gryff" />
+        app:layout_constraintTop_toBottomOf="@id/gryffindor_card" />
 
     <com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
-        android:id="@+id/rev"
+        android:id="@+id/ravenclaw_card"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/huff"
-        app:layout_constraintTop_toBottomOf="@id/sly" />
+        app:layout_constraintStart_toEndOf="@id/hufflepuff_card"
+        app:layout_constraintTop_toBottomOf="@id/slytherin_card" />
+
+    <include
+        android:id="@+id/loading_indicator"
+        android:visibility="gone"
+        layout="@layout/loading_screen" />
+
+    <include
+        android:id="@+id/error_screen"
+        android:visibility="gone"
+        layout="@layout/error_screen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,7 +12,6 @@ import com.onesimo.nyathi.hogwarts.R
 import com.onesimo.nyathi.hogwarts.data.Spell
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HogwartsViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.SpellsViewModel
-import kotlinx.android.synthetic.main.fragment_spells.*
 import timber.log.Timber
 
 class SpellDetailsFragment : Fragment() {
@@ -48,10 +47,6 @@ class SpellDetailsFragment : Fragment() {
 
     private fun displaySpells(spells: List<Spell>) {
         var s = ""
-        spells.forEach {
-            s = s + it.name + "\n"
-        }
-        spells_list.text = s
     }
 
     private fun observeViewModel() {

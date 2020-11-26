@@ -12,7 +12,6 @@ import com.onesimo.nyathi.hogwarts.R
 import com.onesimo.nyathi.hogwarts.data.MovieCharacter
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.CharactersViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HogwartsViewModel
-import kotlinx.android.synthetic.main.fragment_characters.*
 import timber.log.Timber
 
 class CharacterDetailsFragment : Fragment() {
@@ -47,11 +46,7 @@ class CharacterDetailsFragment : Fragment() {
     }
 
     private fun displayCharacters(characters: List<MovieCharacter>) {
-        var s = ""
-        characters.forEach {
-            s = s + it.name + "\n"
-        }
-        characters_list.text = s
+
     }
 
     private fun observeViewModel() {

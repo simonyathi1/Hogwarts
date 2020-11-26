@@ -6,5 +6,90 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/house_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="@drawable/background_gryffindor">
 
+        <TextView
+            android:id="@+id/house_name"
+            style="@style/TitleFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Gryffindor" />
+
+        <Button
+            android:id="@+id/view_toggle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:background="@drawable/background_rounded_button"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/house_name"
+            app:layout_constraintVertical_bias="1"
+            tools:text="View More" />
+
+        <ImageView
+            android:id="@+id/house_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="@dimen/margin_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_hp" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/characters_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin_medium"
+        android:visibility="gone"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/house_banner" />
+
+    <ScrollView
+        android:id="@+id/house_details_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:background="@drawable/scroll"
+        android:padding="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/house_banner">
+
+        <TextView
+            style="@style/ScrollParchmentFont"
+            tools:text="kasjhsahaskc hascam,jxlasmxa akznkjax jkaznx"
+            android:id="@+id/house_details"
+            android:layout_margin="@dimen/dimen_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <include
+        android:id="@+id/loading_indicator"
+        layout="@layout/loading_screen"
+        android:visibility="gone" />
+
+    <include
+        android:id="@+id/error_screen"
+        layout="@layout/error_screen"
+        android:visibility="gone" />
+</androidx.constraintlayout.widget.ConstraintLayout>

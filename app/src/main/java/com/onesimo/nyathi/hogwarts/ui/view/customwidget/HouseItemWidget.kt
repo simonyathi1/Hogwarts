@@ -1,7 +1,6 @@
 package com.onesimo.nyathi.hogwarts.ui.view.customwidget
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -27,12 +26,12 @@ class HouseItemWidget @JvmOverloads constructor(
     fun setPersonDetails(details: HouseDetails) {
         setImageFromUrl(details.imageUrl, house_image, this.context)
         house_name.text = details.name
-        house_card.background = details.background
+        house_card.background = getDrawable(context, details.background)
     }
 
     class HouseDetails(
         val name: String,
         val imageUrl: String,
-        val background: Drawable?
+        val background: Int
     )
 }

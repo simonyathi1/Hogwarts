@@ -1,23 +1,19 @@
 package com.onesimo.nyathi.hogwarts.ui.view
 
 import android.os.Bundle
-import android.telecom.Call
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.content.res.AppCompatResources.getDrawable
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.onesimo.nyathi.hogwarts.R
 import com.onesimo.nyathi.hogwarts.data.House
-import com.onesimo.nyathi.hogwarts.data.MovieCharacter
-import com.onesimo.nyathi.hogwarts.ui.view.customwidget.HouseItemWidget
-import com.onesimo.nyathi.hogwarts.ui.viewmodel.CharactersViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HogwartsViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HousesViewModel
-import kotlinx.android.synthetic.main.fragment_characters.*
+import kotlinx.android.synthetic.main.error_screen.*
 import kotlinx.android.synthetic.main.fragment_houses.*
 import timber.log.Timber
 
@@ -25,6 +21,7 @@ class HousesFragment : Fragment() {
 
     private val viewModel: HousesViewModel by activityViewModels()
     private val hogwartsViewModel: HogwartsViewModel by activityViewModels()
+    private lateinit var houses: List<House>
     private lateinit var navController: NavController
 
     override fun onCreateView(
@@ -39,6 +36,7 @@ class HousesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         observeViewModel()
+        setupListeners()
         getData()
     }
 
@@ -52,17 +50,56 @@ class HousesFragment : Fragment() {
         }
     }
 
-    private fun displayHouses(houses: List<House>) {
-        context?.let { context ->
-        houses.forEach {
-            when{
-                it.name[0] == 'G' -> gryff.setPersonDetails(HouseItemWidget.HouseDetails(it.name, it.emblem, getDrawable(context, R.drawable.background_gryffindor)))
-                it.name[0] == 'R' -> rev.setPersonDetails(HouseItemWidget.HouseDetails(it.name, it.emblem, getDrawable(context, R.drawable.background_ravenclaw)))
-                it.name[0] == 'H' -> huff.setPersonDetails(HouseItemWidget.HouseDetails(it.name, it.emblem, getDrawable(context, R.drawable.background_hufflepuff)))
-                else ->  sly.setPersonDetails(HouseItemWidget.HouseDetails(it.name, it.emblem, getDrawable(context, R.drawable.background_slytherin)))
+    private fun setupListeners() {
+        val action = HousesFragmentDirections.actionHousesFragmentToHouseDetailsFragment()
+        gryffindor_card.setOnClickListener {
+            hogwartsViewModel.selectedHouse = houses.first {
+                it.name[0] == 'G'
             }
+            findNavController().navigate(action)
+        }
+        ravenclaw_card.setOnClickListener {
+            hogwartsViewModel.selectedHouse = houses.first {
+                it.name[0] == 'R'
+            }
+            findNavController().navigate(action)
+        }
+        hufflepuff_card.setOnClickListener {
+            hogwartsViewModel.selectedHouse = houses.first {
+                it.name[0] == 'H'
+            }
+            findNavController().navigate(action)
+        }
+        slytherin_card.setOnClickListener {
+            hogwartsViewModel.selectedHouse = houses.first {
+                it.name[0] == 'S'
+            }
+            findNavController().navigate(action)
+        }
+
+        error_retry_button.setOnClickListener {
+            getData()
         }
     }
+
+    private fun displayHouses(houses: List<House>) {
+        this.houses = houses
+        houses.forEach {
+            when {
+                it.name[0] == 'G' -> gryffindor_card.setPersonDetails(
+                    hogwartsViewModel.getHousesCardDetails(it)
+                )
+                it.name[0] == 'R' -> ravenclaw_card.setPersonDetails(
+                    hogwartsViewModel.getHousesCardDetails(it)
+                )
+                it.name[0] == 'H' -> hufflepuff_card.setPersonDetails(
+                    hogwartsViewModel.getHousesCardDetails(it)
+                )
+                else -> slytherin_card.setPersonDetails(
+                    hogwartsViewModel.getHousesCardDetails(it)
+                )
+            }
+        }
     }
 
     private fun observeViewModel() {
@@ -70,12 +107,23 @@ class HousesFragment : Fragment() {
             hogwartsViewModel.houses = houses
             displayHouses(houses)
         })
-        viewModel.loading.observe(viewLifecycleOwner, Observer {
 
+        viewModel.loading.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                loading_indicator.visibility = View.VISIBLE
+                error_screen.visibility = View.GONE
+            } else {
+                loading_indicator.visibility = View.GONE
+            }
         })
 
         viewModel.error.observe(viewLifecycleOwner, Observer {
-
+            if (it.isNotEmpty()) {
+                error_screen.visibility = View.VISIBLE
+                error_text.text = it
+            } else {
+                error_screen.visibility = View.GONE
+            }
         })
     }
 }

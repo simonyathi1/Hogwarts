@@ -7,4 +7,6 @@
     <string name="houses">Houses</string>
     <string name="characters">Characters</string>
     <string name="spells">Spells</string>
+    <string name="view_characters">View Characters</string>
+    <string name="view_details">View Details</string>
 </resources>
