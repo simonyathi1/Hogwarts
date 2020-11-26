@@ -5,6 +5,73 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+    </style>
+
+    <style name="SlytherinTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorSlytherinOpaque</item>
+        <item name="colorPrimaryDark">@color/colorSlytherinDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+    </style>
+
+    <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--        <item name="colorAccent">@color/colorAccent</item>-->
+    <!--        <item name="android:fontFamily">@font/harry_potter</item>-->
+    <!--    </style>-->
+
+    <!--    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+    <!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+    <!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+    <!--        <item name="colorAccent">@color/colorAccent</item>-->
+    <!--        <item name="android:fontFamily">@font/harry_potter</item>-->
+    <!--    </style>-->
+
+    <style name="TitleFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="PrimaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/medium_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="LargePrimaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
+    </style>
+
+    <style name="SecondaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+    </style>
+
+    <style name="LargeSecondaryFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/large_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/harry_potter</item>
+        <item name="android:textColor">@color/colorSecondaryTextColor</item>
+    </style>
+
+    <style name="ScrollParchmentFont" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/text_size_26sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/tangerine_bold</item>
+        <item name="android:textColor">@color/colorPrimaryTextColor</item>
     </style>
 
 </resources>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.view.CharacterDetailsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/house_banner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/character_details_image"
+            android:layout_width="@dimen/main_image_side"
+            android:layout_height="@dimen/main_image_side"
+            android:layout_margin="@dimen/margin_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/ic_hp" />
+
+        <TextView
+            android:id="@+id/character_name"
+            style="@style/TitleFont"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/character_details_image"
+            tools:text="Dumbledore" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/character_details_scrollview"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/scroll"
+        android:padding="@dimen/margin_large"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/house_banner">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_large"
+            android:orientation="vertical">
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_alias"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/alias" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_role"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/role" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_blood_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/blood_status" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_school"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/school" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_house"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/house" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_wand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/wand" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_ministry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/ministry_of_magic" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_order"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/order_of_the_phoenix" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_army"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/dumbledores_army" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_death_eater"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/death_eater" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_boggart"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/boggart" />
+
+            <com.onesimo.nyathi.hogwarts.ui.view.customwidget.CharacterDetailItemWidget
+                android:id="@+id/character_species"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_marginTop="@dimen/margin_small"
+                android:layout_marginEnd="@dimen/dimen_20"
+                app:label_text="@string/species" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

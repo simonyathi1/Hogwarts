@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HouseItemWidget"></declare-styleable>
+    <declare-styleable name="CharacterDetailItemWidget">
+        <attr name="label_text" format="string" />
+        <attr name="detail_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="InfoViewItemWidget">
+        <attr name="title_text" format="string" />
+        <attr name="info_text" format="string" />
+    </declare-styleable>
+</resources>

@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#002522</color>
+    <color name="colorPrimaryDark">#000E0D</color>
+    <color name="colorPrimaryLight">#03DAC8</color>
+    <color name="colorAccent">#B303DA</color>
+
+    <color name="colorSecondaryTextColor">#454E4D</color>
+    <color name="colorPrimaryTextColor">#130101</color>
+    <color name="colorLight">#DFFFFC</color>
+
+    <color name="colorError">#730000</color>
+
+    <color name="colorGryffindor">#99D00000</color>
+
+
+    <color name="colorHufflePuff">#9AE4BB00</color>
+    <color name="colorHufflePuffOpaque">#9AE4BB00</color>
+    <color name="colorHufflePuffDark">#0B0900</color>
+
+
+    <color name="colorSlytherin">#9A006B00</color>
+    <color name="colorSlytherinOpaque">#006B00</color>
+    <color name="colorSlytherinDark">#002000</color>
+
+    <color name="colorRavenclaw">#9A008BB1</color>
 </resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/hogwarts_express_nav_graph"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.HomeFragment"
+        android:label="@string/hogwarts"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_housesFragment"
+            app:destination="@id/housesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_charactersFragment"
+            app:destination="@id/charactersFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_spellsFragment"
+            app:destination="@id/spellsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/housesFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.HousesFragment"
+        android:label="@string/houses"
+        tools:layout="@layout/fragment_houses">
+        <action
+            android:id="@+id/action_housesFragment_to_houseDetailsFragment"
+            app:destination="@id/houseDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/spellsFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.SpellsFragment"
+        android:label="@string/spells"
+        tools:layout="@layout/fragment_spells">
+        <action
+            android:id="@+id/action_spellsFragment_to_spellDetailsFragment"
+            app:destination="@id/spellDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/charactersFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.CharactersFragment"
+        android:label="@string/characters"
+        tools:layout="@layout/fragment_characters">
+        <action
+            android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/houseDetailsFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.HouseDetailsFragment"
+        android:label="@string/house_details"
+        tools:layout="@layout/fragment_house_details">
+        <action
+            android:id="@+id/action_houseDetailsFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterDetailsFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.CharacterDetailsFragment"
+        android:label="@string/character_details"
+        tools:layout="@layout/fragment_character_details" />
+    <fragment
+        android:id="@+id/spellDetailsFragment"
+        android:name="com.onesimo.nyathi.hogwarts.ui.view.SpellDetailsFragment"
+        android:label="@string/spell_details"
+        tools:layout="@layout/fragment_spell_details" />
+</navigation>

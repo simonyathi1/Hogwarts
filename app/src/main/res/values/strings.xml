@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Hogwarts</string>
+    <string name="retry">Retry</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="welcome_to_the_hogwarts_school_of_witchcraft_and_wizardry_mobile_app">The \nHogwarts School of Witchcraft and Wizardry \nMobile App</string>
+    <string name="this_is_the_room_of_requirements_you_will_find_what_you_need_here_and_what_you_need_you_will_find_here">This is the room of requirements. You will find what you need here. And what you need, you will find here</string>
+    <string name="houses">Houses</string>
+    <string name="characters">Characters</string>
+    <string name="spells">Spells</string>
+    <string name="view_characters">View Characters</string>
+    <string name="view_details">View Details</string>
+    <string name="extra_detail">Extra Detail</string>
+    <string name="use">Use</string>
+    <string name="unforgivable">Unforgivable?</string>
+    <string name="spell">Spell</string>
+    <string name="species">Species</string>
+    <string name="boggart">Boggart</string>
+    <string name="death_eater">Death Eater</string>
+    <string name="dumbledores_army">Dumbledore\'s Army?</string>
+    <string name="order_of_the_phoenix">Order of the Phoenix?</string>
+    <string name="ministry_of_magic">Ministry Of Magic?</string>
+    <string name="wand">Wand</string>
+    <string name="house">House</string>
+    <string name="school">School</string>
+    <string name="blood_status">Blood Status</string>
+    <string name="role">Role</string>
+    <string name="alias">Alias</string>
+    <string name="hogwarts">Hogwarts</string>
+    <string name="house_details">House Details</string>
+    <string name="character_details">Character Details</string>
+    <string name="spell_details">Spell Details</string>
 </resources>
