@@ -18,10 +18,14 @@ class CharactersViewModel @ViewModelInject constructor(private val characterRepo
     fun getCharacters() {
         viewModelScope.launch {
             loading.postValue(true)
-            characterRepository.getCharacters().let {
-                if (it.isSuccessful) {
-                    characters.postValue(it.body())
-                } else error.postValue(it.errorBody().toString() + it.raw().body)
+            try {
+                characterRepository.getCharacters().let {
+                    if (it.isSuccessful) {
+                        characters.postValue(it.body())
+                    } else error.postValue(it.errorBody().toString() + it.raw().body)
+                }
+            } catch (e: Exception) {
+                error.postValue("Something went wrong. Please try again")
             }
             loading.postValue(false)
         }

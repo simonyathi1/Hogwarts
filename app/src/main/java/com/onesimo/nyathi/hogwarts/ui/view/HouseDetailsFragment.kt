@@ -64,7 +64,7 @@ class HouseDetailsFragment : Fragment() {
             setImageFromUrl(house.emblem, house_image, it)
             house_banner.background = AppCompatResources.getDrawable(
                 it,
-                hogwartsViewModel.getHousesCardDetails(house).background
+                R.drawable.background
             )
         }
     }
@@ -102,7 +102,6 @@ class HouseDetailsFragment : Fragment() {
             characters_list.visibility = View.GONE
             house_details_scrollview.visibility = View.VISIBLE
         }
-
     }
 
     private fun observeViewModel() {

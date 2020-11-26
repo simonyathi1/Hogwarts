@@ -3,7 +3,6 @@ package com.onesimo.nyathi.hogwarts.ui.view.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.onesimo.nyathi.hogwarts.R
@@ -30,7 +29,6 @@ class SpellsAdapter constructor(
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val image: ImageView = itemView.findViewById(R.id.item_image)
         val text: TextView = itemView.findViewById(R.id.item_text)
     }
 

@@ -4,24 +4,23 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.onesimo.nyathi.hogwarts.data.House
-import com.onesimo.nyathi.hogwarts.repo.HouseRepository
+import com.onesimo.nyathi.hogwarts.repo.SortingHatRepository
 import kotlinx.coroutines.launch
 
-class HousesViewModel @ViewModelInject constructor(private val houseRepository: HouseRepository) :
+class SortingHatViewModel @ViewModelInject constructor(private val sortingHatRepository: SortingHatRepository) :
     ViewModel() {
 
-    var houses = MutableLiveData<List<House>>()
+    var sortingOutcome = MutableLiveData<String>()
     var loading = MutableLiveData<Boolean>()
     var error = MutableLiveData<String>()
 
-    fun getHouses() {
+    fun getSorted() {
         viewModelScope.launch {
             loading.postValue(true)
             try {
-                houseRepository.getHouses().let {
+                sortingHatRepository.getSortingHatDecision().let {
                     if (it.isSuccessful) {
-                        houses.postValue(it.body())
+                        sortingOutcome.postValue(it.body()?.house)
                     } else error.postValue(it.errorBody().toString() + it.raw().body)
                 }
             } catch (e: Exception) {

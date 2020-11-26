@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.onesimo.nyathi.hogwarts.R
 import com.onesimo.nyathi.hogwarts.data.MovieCharacter
@@ -16,13 +15,11 @@ import com.onesimo.nyathi.hogwarts.ui.viewmodel.CharactersViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HogwartsViewModel
 import kotlinx.android.synthetic.main.error_screen.*
 import kotlinx.android.synthetic.main.fragment_characters.*
-import timber.log.Timber
 
 class CharactersFragment : Fragment() {
 
     private val viewModel: CharactersViewModel by activityViewModels()
     private val hogwartsViewModel: HogwartsViewModel by activityViewModels()
-    private lateinit var navController: NavController
     private lateinit var adapter: CharactersAdapter
 
     override fun onCreateView(
@@ -44,10 +41,8 @@ class CharactersFragment : Fragment() {
     private fun getData() {
         if (hogwartsViewModel.characters.isNullOrEmpty()) {
             viewModel.getCharacters()
-            Timber.d("===Remote")
         } else {
             displayCharacters(hogwartsViewModel.characters!!)
-            Timber.d("===Local")
         }
     }
 

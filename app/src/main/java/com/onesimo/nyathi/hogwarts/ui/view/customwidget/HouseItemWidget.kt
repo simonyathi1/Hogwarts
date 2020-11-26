@@ -23,7 +23,7 @@ class HouseItemWidget @JvmOverloads constructor(
         }
     }
 
-    fun setPersonDetails(details: HouseDetails) {
+    fun seHouseDetails(details: HouseDetails) {
         setImageFromUrl(details.imageUrl, house_image, this.context)
         house_name.text = details.name
         house_card.background = getDrawable(context, details.background)

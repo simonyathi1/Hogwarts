@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.onesimo.nyathi.hogwarts.R
 import com.onesimo.nyathi.hogwarts.data.House
@@ -15,14 +14,12 @@ import com.onesimo.nyathi.hogwarts.ui.viewmodel.HogwartsViewModel
 import com.onesimo.nyathi.hogwarts.ui.viewmodel.HousesViewModel
 import kotlinx.android.synthetic.main.error_screen.*
 import kotlinx.android.synthetic.main.fragment_houses.*
-import timber.log.Timber
 
 class HousesFragment : Fragment() {
 
     private val viewModel: HousesViewModel by activityViewModels()
     private val hogwartsViewModel: HogwartsViewModel by activityViewModels()
     private lateinit var houses: List<House>
-    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -43,10 +40,8 @@ class HousesFragment : Fragment() {
     private fun getData() {
         if (hogwartsViewModel.houses.isNullOrEmpty()) {
             viewModel.getHouses()
-            Timber.d("===Remote")
         } else {
             displayHouses(hogwartsViewModel.houses!!)
-            Timber.d("===Local")
         }
     }
 
@@ -86,16 +81,16 @@ class HousesFragment : Fragment() {
         this.houses = houses
         houses.forEach {
             when {
-                it.name[0] == 'G' -> gryffindor_card.setPersonDetails(
+                it.name[0] == 'G' -> gryffindor_card.seHouseDetails(
                     hogwartsViewModel.getHousesCardDetails(it)
                 )
-                it.name[0] == 'R' -> ravenclaw_card.setPersonDetails(
+                it.name[0] == 'R' -> ravenclaw_card.seHouseDetails(
                     hogwartsViewModel.getHousesCardDetails(it)
                 )
-                it.name[0] == 'H' -> hufflepuff_card.setPersonDetails(
+                it.name[0] == 'H' -> hufflepuff_card.seHouseDetails(
                     hogwartsViewModel.getHousesCardDetails(it)
                 )
-                else -> slytherin_card.setPersonDetails(
+                else -> slytherin_card.seHouseDetails(
                     hogwartsViewModel.getHousesCardDetails(it)
                 )
             }
