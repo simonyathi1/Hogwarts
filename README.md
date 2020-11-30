@@ -10,4 +10,7 @@
   - Dagger Hilt
   - JetPack's Navigation Component
   - MVVM Pattern
-  
+
+
+- App flow diagram  
+![](HogwartsAppFlowDiagram.png)
